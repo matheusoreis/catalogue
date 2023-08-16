@@ -1,5 +1,5 @@
-import 'package:client/app/views/components/alert_dialog.dart';
-import 'package:client/app/views/components/buttons/button.dart';
+import 'package:catalogue/app/views/components/alert_dialog.dart';
+import 'package:catalogue/app/views/components/buttons/button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

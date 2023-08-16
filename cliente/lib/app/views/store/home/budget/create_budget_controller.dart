@@ -1,8 +1,8 @@
 // Importações de pacotes e arquivos necessários
 import 'dart:convert';
 
-import 'package:client/app/shared/result.dart';
-import 'package:client/app/views/components/buttons/button.dart';
+import 'package:catalogue/app/shared/result.dart';
+import 'package:catalogue/app/views/components/buttons/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:go_router/go_router.dart';

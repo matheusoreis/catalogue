@@ -1,4 +1,4 @@
-import 'package:client/app/views/pages/home/about/about_page.dart';
+import 'package:catalogue/app/views/pages/home/about/about_page.dart';
 import 'package:go_router/go_router.dart';
 
 import '../views/pages/auth/password_reset/forgot_confirm_page.dart';

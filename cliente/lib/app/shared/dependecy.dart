@@ -1,6 +1,6 @@
-import 'package:client/app/controller/repositories/home/about/about_repository.dart';
-import 'package:client/app/controller/services/home/about/about_service.dart';
-import 'package:client/app/views/store/home/about/about_controller.dart';
+import 'package:catalogue/app/controller/repositories/home/about/about_repository.dart';
+import 'package:catalogue/app/controller/services/home/about/about_service.dart';
+import 'package:catalogue/app/views/store/home/about/about_controller.dart';
 import 'package:get_it/get_it.dart';
 
 import '../controller/client/http_client.dart';
