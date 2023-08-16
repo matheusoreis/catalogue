@@ -78,7 +78,7 @@ class _IntroPageState extends State<IntroPage> {
                           fit: BoxFit.cover,
                           placeholder: (context, url) {
                             return DotsLoading(
-                              color: darkRed500,
+                              color: primary500,
                               size: 30.0,
                             );
                           },
@@ -117,7 +117,7 @@ class _IntroPageState extends State<IntroPage> {
                                           padding: const EdgeInsets.only(left: 10.0),
                                           child: CircleAvatar(
                                             maxRadius: 5,
-                                            backgroundColor: index == indexDots ? darkRed500 : darkRed100,
+                                            backgroundColor: index == indexDots ? primary500 : primary100,
                                           ),
                                         );
                                       },

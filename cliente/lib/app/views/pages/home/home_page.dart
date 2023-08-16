@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
-              backgroundColor: darkRed500,
+              backgroundColor: primary500,
               flexibleSpace: const FlexibleSpaceBar(),
             ),
           ),

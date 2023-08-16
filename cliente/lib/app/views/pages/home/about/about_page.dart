@@ -65,7 +65,7 @@ class _AboutPageState extends State<AboutPage> {
         onLoading: (context) {
           return Center(
             child: DotsLoading(
-              color: darkRed500,
+              color: primary500,
               size: 30.0,
             ),
           );
@@ -107,7 +107,7 @@ class _AboutPageState extends State<AboutPage> {
                       Container(
                         width: 120,
                         height: 5,
-                        color: darkRed500,
+                        color: primary500,
                       ),
                     ],
                   ),

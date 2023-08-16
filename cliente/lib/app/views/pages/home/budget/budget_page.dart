@@ -184,7 +184,7 @@ class _BudgetPageState extends State<BudgetPage> {
                                 store: stateController,
                                 onLoading: (context) {
                                   return DotsLoading(
-                                    color: darkRed500,
+                                    color: primary500,
                                     size: 30.0,
                                   );
                                 },
@@ -260,30 +260,30 @@ class _BudgetPageState extends State<BudgetPage> {
                                       YourIcons.chat,
                                     ),
                                   ),
-                                  border: const OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(30),
-                                    ),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(30),
-                                    ),
-                                    borderSide: BorderSide(
-                                      color: darkRed400,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(30),
-                                    ),
-                                    borderSide: BorderSide(
-                                      color: darkRed400,
-                                      width: 2.0,
-                                    ),
-                                  ),
+                                  // border: const OutlineInputBorder(
+                                  //   borderRadius: BorderRadius.all(
+                                  //     Radius.circular(30),
+                                  //   ),
+                                  //   borderSide: BorderSide.none,
+                                  // ),
+                                  // errorBorder: OutlineInputBorder(
+                                  //   borderRadius: const BorderRadius.all(
+                                  //     Radius.circular(30),
+                                  //   ),
+                                  //   borderSide: BorderSide(
+                                  //     color: darkRed400,
+                                  //     width: 2.0,
+                                  //   ),
+                                  // ),
+                                  // focusedErrorBorder: OutlineInputBorder(
+                                  //   borderRadius: const BorderRadius.all(
+                                  //     Radius.circular(30),
+                                  //   ),
+                                  //   borderSide: BorderSide(
+                                  //     color: darkRed400,
+                                  //     width: 2.0,
+                                  //   ),
+                                  // ),
                                 ),
                                 keyboardType: TextInputType.multiline,
                                 maxLines: 5,

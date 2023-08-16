@@ -29,7 +29,7 @@ class OnLoading extends StatelessWidget {
           ),
         ),
         DotsLoading(
-          color: darkRed500,
+          color: primary500,
           size: 30.0,
         ),
       ],

@@ -26,7 +26,7 @@ var lightTheme = ThemeData(
         Radius.circular(50),
       ),
       borderSide: BorderSide(
-        color: darkRed100,
+        color: errorLightColor,
         width: 2.0,
       ),
     ),
@@ -35,7 +35,7 @@ var lightTheme = ThemeData(
         Radius.circular(50),
       ),
       borderSide: BorderSide(
-        color: darkRed200,
+        color: errorLightFocusedColor,
         width: 2.0,
       ),
     ),
@@ -59,11 +59,11 @@ var lightTheme = ThemeData(
         (states) {
           // Cor ao ser desativado
           if (states.contains(MaterialState.disabled)) {
-            return darkRed100;
+            return primary100;
           }
 
           // Cor padrão
-          return darkRed500;
+          return primary500;
         },
       ),
       foregroundColor: MaterialStateProperty.resolveWith(
@@ -97,7 +97,7 @@ var darkTheme = ThemeData(
         Radius.circular(50),
       ),
       borderSide: BorderSide(
-        color: darkRed400,
+        color: errorDarkColor,
         width: 2.0,
       ),
     ),
@@ -106,7 +106,7 @@ var darkTheme = ThemeData(
         Radius.circular(50),
       ),
       borderSide: BorderSide(
-        color: darkRed500,
+        color: errorDarkFocusedColor,
         width: 2.0,
       ),
     ),
@@ -130,11 +130,11 @@ var darkTheme = ThemeData(
         (states) {
           // Cor ao ser desativado
           if (states.contains(MaterialState.disabled)) {
-            return darkRed100;
+            return primary100;
           }
 
           // Cor padrão
-          return darkRed500;
+          return primary500;
         },
       ),
       foregroundColor: MaterialStateProperty.resolveWith(

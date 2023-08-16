@@ -53,7 +53,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           CircleAvatar(
-                            backgroundColor: darkRed500,
+                            backgroundColor: primary500,
                             radius: 35,
                             child: HeadlineMedium(
                               text: drawerController.signInModelRecordData.name[0].toUpperCase(),

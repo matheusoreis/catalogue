@@ -75,7 +75,7 @@ class _ConfigPageState extends State<ConfigPage> {
                   height: maxHeight / 13,
                 ),
                 DotsLoading(
-                  color: darkRed500,
+                  color: primary500,
                   size: 30.0,
                 ),
               ],

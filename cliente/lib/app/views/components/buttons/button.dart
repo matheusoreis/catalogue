@@ -21,7 +21,7 @@ class Button extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: color == null
-            ? MaterialStateColor.resolveWith((states) => darkRed500)
+            ? MaterialStateColor.resolveWith((states) => primary500)
             : MaterialStateColor.resolveWith((states) => color!),
         minimumSize: MaterialStateProperty.resolveWith(
           (states) => const Size.fromHeight(60.0),

@@ -17,7 +17,7 @@ class OnError extends StatelessWidget {
           text: 'Erro na conexão com o servidor...',
         ),
         DotsLoading(
-          color: darkRed500,
+          color: primary500,
           size: 30.0,
         ),
       ],

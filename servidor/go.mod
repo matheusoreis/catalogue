@@ -1,4 +1,4 @@
-module allitubos
+module catalogue
 
 go 1.20
 
