@@ -1,0 +1,23 @@
+/* Header CSS */
+
+.header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 24px 0;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 12px 0;
+    }
+}
+
+.header.sticked {
+    background: var(--color-primary-opacity);
+    padding: 12px 0;
+}
+
+.header .logo img {
+    max-height: 50px;
+    margin-right: 6px;
+}
