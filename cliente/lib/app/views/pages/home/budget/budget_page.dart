@@ -252,38 +252,30 @@ class _BudgetPageState extends State<BudgetPage> {
                                   }
                                   return null;
                                 },
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   hintText: 'Mensagem',
-                                  prefixIcon: const Padding(
+                                  prefixIcon: Padding(
                                     padding: EdgeInsets.only(left: 15.0),
                                     child: YourIcon(
                                       YourIcons.chat,
                                     ),
                                   ),
-                                  // border: const OutlineInputBorder(
-                                  //   borderRadius: BorderRadius.all(
-                                  //     Radius.circular(30),
-                                  //   ),
-                                  //   borderSide: BorderSide.none,
-                                  // ),
-                                  // errorBorder: OutlineInputBorder(
-                                  //   borderRadius: const BorderRadius.all(
-                                  //     Radius.circular(30),
-                                  //   ),
-                                  //   borderSide: BorderSide(
-                                  //     color: darkRed400,
-                                  //     width: 2.0,
-                                  //   ),
-                                  // ),
-                                  // focusedErrorBorder: OutlineInputBorder(
-                                  //   borderRadius: const BorderRadius.all(
-                                  //     Radius.circular(30),
-                                  //   ),
-                                  //   borderSide: BorderSide(
-                                  //     color: darkRed400,
-                                  //     width: 2.0,
-                                  //   ),
-                                  // ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(30),
+                                    ),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(30),
+                                    ),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(30),
+                                    ),
+                                  ),
                                 ),
                                 keyboardType: TextInputType.multiline,
                                 maxLines: 5,

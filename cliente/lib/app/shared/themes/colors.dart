@@ -17,12 +17,6 @@ Color errorLightFocusedColor = HexColor('#E67A96');
 Color errorDarkColor = HexColor('#CE4261');
 Color errorDarkFocusedColor = HexColor('#C22546');
 
-// Color darkRed500 = HexColor('#C22546');
-// Color darkRed400 = HexColor('#CE4261');
-// Color darkRed300 = HexColor('#DA5E7C');
-// Color darkRed200 = HexColor('#E67A96');
-// Color Primary100 = HexColor('#F297B1');
-
 // Gray Colors
 Color grayColor = HexColor('#F5F5F5');
 Color grayColor500 = HexColor('#1a1a1c');
