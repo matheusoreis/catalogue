@@ -10,9 +10,9 @@ class AboutService {
     required this.aboutRepository,
   });
 
-  Future<Result<ErrorResponse, AboutModelData>> getAbout() async {
+  Future<Result<ErrorResponse, AboutModelData>> getAbout({required String authorization}) async {
     try {
-      final state = await aboutRepository.getAbout();
+      final state = await aboutRepository.getAbout(authorization: authorization);
 
       if (state.isSuccess) {
         return (null, state.getSuccess);

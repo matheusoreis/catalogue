@@ -5,7 +5,9 @@ import 'loading_dots/loading_dots.dart';
 import 'texts.dart';
 
 class OnError extends StatelessWidget {
-  const OnError({super.key});
+  const OnError({super.key, required this.error});
+
+  final String? error;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,8 @@ class OnError extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const HeadlineSmall(
-          text: 'Erro na conexão com o servidor...',
+        HeadlineSmall(
+          text: error ?? 'Erro na conexão com o servidor...',
         ),
         DotsLoading(
           color: primary500,

@@ -49,11 +49,14 @@ class _IntroPageState extends State<IntroPage> {
         onLoading: (context) {
           return OnLoading(
             maxHeight: maxHeight,
-            color: Colors.white,
+            colorInLight: lightTextColor,
+            colorInDark: darkTextColor,
           );
         },
         onError: (context, error) {
-          return const OnError();
+          return const OnError(
+            error: null,
+          );
         },
         onState: (context, state) {
           return PageView.builder(

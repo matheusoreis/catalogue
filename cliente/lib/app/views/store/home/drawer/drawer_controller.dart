@@ -53,7 +53,7 @@ class MyDrawerController {
         icon: YourIcons.shoppingBag,
         buttonText: 'Produtos',
         onPressed: () {
-          debugPrint('Clicou em Produtos');
+          GoRouter.of(context).push('/product');
         },
       ),
       DrawerModel(

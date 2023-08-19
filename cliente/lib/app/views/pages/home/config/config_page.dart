@@ -71,7 +71,7 @@ class _ConfigPageState extends State<ConfigPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                  'assets/img/logo_white.svg',
+                  'assets/img/logo.svg',
                   height: maxHeight / 13,
                 ),
                 DotsLoading(

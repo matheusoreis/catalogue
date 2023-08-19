@@ -12,9 +12,9 @@ class StateService {
     required this.stateRepository,
   });
 
-  Future<Result<ErrorResponse, StateModelData>> getState() async {
+  Future<Result<ErrorResponse, StateModelData>> getState({required String authorization}) async {
     try {
-      final state = await stateRepository.getState();
+      final state = await stateRepository.getState(authorization: authorization);
 
       if (state.isSuccess) {
         return (null, state.getSuccess);

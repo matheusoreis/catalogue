@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:catalogue/app/views/components/loading_dots/loading_dots.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
@@ -40,11 +42,14 @@ class _EntryPageState extends State<EntryPage> {
         onLoading: (context) {
           return OnLoading(
             maxHeight: maxHeight,
-            color: Colors.white,
+            colorInLight: lightTextColor,
+            colorInDark: darkTextColor,
           );
         },
         onError: (context, error) {
-          return const OnError();
+          return const OnError(
+            error: null,
+          );
         },
         onState: (context, state) {
           var indexEntryModel = state.entry!.items[0];
@@ -54,9 +59,16 @@ class _EntryPageState extends State<EntryPage> {
               Expanded(
                 child: SizedBox(
                   width: maxWidth,
-                  child: Image.network(
-                    '$apiURL/api/files/${indexEntryModel.collectionId}/${indexEntryModel.id}/${indexEntryModel.background}',
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        '$apiURL/api/files/${indexEntryModel.collectionId}/${indexEntryModel.id}/${indexEntryModel.background}',
                     fit: BoxFit.cover,
+                    placeholder: (context, url) {
+                      return DotsLoading(
+                        color: primary500,
+                        size: 30.0,
+                      );
+                    },
                   ),
                 ),
               ),

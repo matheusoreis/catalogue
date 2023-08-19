@@ -1,6 +1,9 @@
 import 'package:catalogue/app/controller/repositories/home/about/about_repository.dart';
+import 'package:catalogue/app/controller/repositories/home/conditioner/conditioners_repository.dart';
 import 'package:catalogue/app/controller/services/home/about/about_service.dart';
+import 'package:catalogue/app/controller/services/home/conditioner/conditioner_service.dart';
 import 'package:catalogue/app/views/store/home/about/about_controller.dart';
+import 'package:catalogue/app/views/store/home/conditioner/conditioner_controller.dart';
 import 'package:get_it/get_it.dart';
 
 import '../controller/client/http_client.dart';
@@ -50,7 +53,7 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Intro
   getIt.registerLazySingleton<IntroController>(
-    () => IntroController(getIt(), getIt()),
+    () => IntroController(getIt(), getIt(), getIt()),
   );
 
   getIt.registerLazySingleton<IntroService>(
@@ -63,7 +66,7 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Entry
   getIt.registerLazySingleton<EntryController>(
-    () => EntryController(getIt(), getIt()),
+    () => EntryController(getIt(), getIt(), getIt()),
   );
 
   getIt.registerLazySingleton<EntryService>(
@@ -102,7 +105,7 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Home
   getIt.registerLazySingleton<HomeController>(
-    () => HomeController(getIt()),
+    () => HomeController(getIt(), getIt(), getIt()),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Requisição de Troca de Senha
@@ -133,7 +136,7 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Requisição dos Estados
   getIt.registerLazySingleton<StateController>(
-    () => StateController(getIt()),
+    () => StateController(stateService: getIt(), sharedPreferenceService: getIt()),
   );
 
   getIt.registerLazySingleton<StateService>(
@@ -159,7 +162,7 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório do Sobre
   getIt.registerLazySingleton<AboutController>(
-    () => AboutController(aboutService: getIt()),
+    () => AboutController(aboutService: getIt(), sharedPreferenceService: getIt()),
   );
 
   getIt.registerLazySingleton<AboutService>(
@@ -168,6 +171,19 @@ void setupProviders() {
 
   getIt.registerLazySingleton<AboutRepository>(
     () => AboutRepository(myHttpClient: getIt()),
+  );
+
+  // Registra o Singleton do Controlador, Serviço e o Repositório dos Climatizadores
+  getIt.registerLazySingleton<ConditionerController>(
+    () => ConditionerController(conditionerService: getIt(), sharedPreferenceService: getIt()),
+  );
+
+  getIt.registerLazySingleton<ConditionerService>(
+    () => ConditionerService(conditionerRepository: getIt()),
+  );
+
+  getIt.registerLazySingleton<ConditionerRepository>(
+    () => ConditionerRepository(myHttpClient: getIt()),
   );
 
   // Registra o Factory do Controlador da Visibilidade da Senha

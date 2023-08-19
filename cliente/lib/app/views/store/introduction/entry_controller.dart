@@ -10,15 +10,18 @@ import '../../../models/auth/sign_in.dart';
 import '../../../models/introduction/entry.dart';
 import '../../../shared/local_storage.dart';
 import '../../../shared/result.dart';
+import '../theme/theme_controller.dart';
 
 class EntryController extends Store<EntryState> {
   EntryController(
     this.entryService,
     this.sharedPreferenceService,
+    this.themeController,
   ) : super(SuccessEntryState(entry: EntryModelData.clear()));
 
   final EntryService entryService;
   final SharedPreferenceService sharedPreferenceService;
+  final ThemeController themeController;
 
   Future getEntry(BuildContext context) async {
     setLoading(true);

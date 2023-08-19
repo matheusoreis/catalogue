@@ -39,8 +39,8 @@ class _AppWidgetState extends State<AppWidget> {
       store: themeController,
       onState: (context, state) {
         return MaterialApp.router(
-          title: 'Allitubos',
-          themeMode: themeController.themeMode,
+          title: 'Tecnobrisa',
+          themeMode: themeController.state,
           theme: lightTheme,
           darkTheme: darkTheme,
           routerDelegate: routes.routerDelegate,

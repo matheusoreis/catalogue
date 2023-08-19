@@ -1,4 +1,7 @@
+import 'package:catalogue/app/models/home/conditioner/conditioners_model.dart';
 import 'package:catalogue/app/views/pages/home/about/about_page.dart';
+import 'package:catalogue/app/views/pages/home/conditioner/conditioner_page.dart';
+import 'package:catalogue/app/views/pages/home/product/product_page.dart';
 import 'package:go_router/go_router.dart';
 
 import '../views/pages/auth/password_reset/forgot_confirm_page.dart';
@@ -51,5 +54,17 @@ List<GoRoute> appRoutes = [
   GoRoute(
     path: '/config',
     builder: (context, state) => const ConfigPage(),
+  ),
+  GoRoute(
+    path: '/conditioner',
+    builder: (context, state) {
+      return ConditionerPage(
+        conditionerModelItems: state.extra as ConditionerModelItems,
+      );
+    },
+  ),
+  GoRoute(
+    path: '/product',
+    builder: (context, state) => const ProductPage(),
   ),
 ];

@@ -13,10 +13,16 @@ class AboutRepository {
     required this.myHttpClient,
   });
 
-  Future<Result<ErrorResponse, AboutModelData>> getAbout() async {
+  Future<Result<ErrorResponse, AboutModelData>> getAbout({required String authorization}) async {
     const String url = '$apiURL/api/collections/about/records';
 
-    final response = await myHttpClient.get(url: url);
+    final response = await myHttpClient.get(
+      url: url,
+      headers: {
+        'Content-Type': 'application/json',
+        "authorization": authorization,
+      },
+    );
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> body = jsonDecode(response.body);

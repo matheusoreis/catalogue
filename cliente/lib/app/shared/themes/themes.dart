@@ -9,6 +9,7 @@ var lightTheme = ThemeData(
   colorScheme: _lightColorScheme,
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
+    fillColor: grayColor100,
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(50),

@@ -4,7 +4,7 @@ import 'package:flutter_triple/flutter_triple.dart';
 import '../../../shared/local_storage.dart';
 
 class ThemeController extends Store<ThemeMode> {
-  ThemeController(this.shared) : super(ThemeMode.system);
+  ThemeController(this.shared) : super(ThemeMode.light);
 
   final SharedPreferenceService shared;
 
@@ -23,6 +23,14 @@ class ThemeController extends Store<ThemeMode> {
       update(ThemeMode.dark);
     } else {
       update(ThemeMode.light);
+    }
+  }
+
+  Color colorTheme({required Color colorInLight, required Color colorInDark}) {
+    if (isLightTheme) {
+      return colorInLight;
+    } else {
+      return colorInDark;
     }
   }
 

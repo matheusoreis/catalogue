@@ -31,22 +31,23 @@ class StateModelData {
 
   factory StateModelData.empty() {
     return StateModelData(
-        page: 0,
-        perPage: 0,
-        totalItems: 0,
-        totalPages: 0,
-        items: <StateModelItems>[
-          StateModelItems(
-            collectionId: '',
-            collectionName: '',
-            created: '',
-            id: '',
-            name: '',
-            reduction: '',
-            disabled: false,
-            updated: '',
-          ),
-        ]);
+      page: 0,
+      perPage: 0,
+      totalItems: 0,
+      totalPages: 0,
+      items: <StateModelItems>[
+        StateModelItems(
+          collectionId: '',
+          collectionName: '',
+          created: '',
+          id: '',
+          name: '',
+          reduction: '',
+          disabled: false,
+          updated: '',
+        ),
+      ],
+    );
   }
 
   Map<String, dynamic> toMap() {

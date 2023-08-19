@@ -5,14 +5,14 @@ import 'delay_tween.dart';
 class DotsLoading extends StatefulWidget {
   const DotsLoading({
     super.key,
-    this.color,
+    required this.color,
     this.size = 50.0,
     this.itemBuilder,
     this.duration = const Duration(milliseconds: 1400),
     this.controller,
   });
 
-  final Color? color;
+  final Color color;
   final double size;
   final IndexedWidgetBuilder? itemBuilder;
   final Duration duration;

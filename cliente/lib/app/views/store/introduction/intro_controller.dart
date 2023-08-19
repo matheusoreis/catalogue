@@ -1,3 +1,4 @@
+import 'package:catalogue/app/views/store/theme/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:go_router/go_router.dart';
@@ -12,10 +13,12 @@ class IntroController extends Store<IntroState> {
   IntroController(
     this.introService,
     this.sharedPreferenceService,
+    this.themeController,
   ) : super(SuccessIntroState(intro: IntroModelData.empty()));
 
   final IntroService introService;
   final SharedPreferenceService sharedPreferenceService;
+  final ThemeController themeController;
 
   Future getIntro(BuildContext context) async {
     setLoading(true);

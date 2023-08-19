@@ -1,0 +1,12 @@
+icons_launcher:
+  image_path: "assets/img/app_icon.png"
+  adaptive_background_color: '#398AC9'
+  # adaptive_background_image: 'assets/ic_background.png'
+  # adaptive_foreground_image: 'assets/ic_foreground.png'
+  # adaptive_round_image: 'assets/ic_logo_round.png'
+  # adaptive_monochrome_image: 'assets/ic_logo_monochrome.png'
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true

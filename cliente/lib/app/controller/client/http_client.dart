@@ -1,7 +1,10 @@
 import 'package:http/http.dart' as http;
 
 abstract interface class IHttpClient {
-  Future? get({required String url}) {
+  Future? get({
+    required String url,
+    Map<String, String>? headers,
+  }) {
     return null;
   }
 
@@ -18,9 +21,13 @@ class MyHttpClient implements IHttpClient {
   final client = http.Client();
 
   @override
-  Future get({required String url}) async {
+  Future get({
+    required String url,
+    Map<String, String>? headers,
+  }) async {
     return await client.get(
       Uri.parse(url),
+      headers: headers,
     );
   }
 
@@ -28,7 +35,7 @@ class MyHttpClient implements IHttpClient {
   Future? post({
     required String url,
     required dynamic body,
-    required Map<String, String> headers,
+    Map<String, String>? headers,
   }) async {
     return await client.post(
       Uri.parse(url),
