@@ -10,7 +10,10 @@ import '../../../components/your_icons/your_icons_icons.dart';
 import '../home_controller.dart';
 
 class MyDrawerController {
-  MyDrawerController(this.homeController, this.sharedPreferenceService);
+  MyDrawerController({
+    required this.homeController,
+    required this.sharedPreferenceService,
+  });
   final HomeController homeController;
   final SharedPreferenceService sharedPreferenceService;
 

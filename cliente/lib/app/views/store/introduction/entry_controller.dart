@@ -13,11 +13,11 @@ import '../../../shared/result.dart';
 import '../theme/theme_controller.dart';
 
 class EntryController extends Store<EntryState> {
-  EntryController(
-    this.entryService,
-    this.sharedPreferenceService,
-    this.themeController,
-  ) : super(SuccessEntryState(entry: EntryModelData.clear()));
+  EntryController({
+    required this.entryService,
+    required this.sharedPreferenceService,
+    required this.themeController,
+  }) : super(SuccessEntryState(entry: EntryModelData.clear()));
 
   final EntryService entryService;
   final SharedPreferenceService sharedPreferenceService;

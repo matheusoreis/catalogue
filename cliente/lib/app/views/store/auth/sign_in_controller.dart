@@ -11,10 +11,10 @@ import '../../components/alert_dialog.dart';
 import '../../components/buttons/button.dart';
 
 class SignInController extends Store<SignInState> {
-  SignInController(
-    this.signInService,
-    this.sharedPreferenceService,
-  ) : super(SuccessSignInState(login: SignInModel.empty()));
+  SignInController({
+    required this.signInService,
+    required this.sharedPreferenceService,
+  }) : super(SuccessSignInState(login: SignInModel.empty()));
 
   final SignInService signInService;
   final SharedPreferenceService sharedPreferenceService;

@@ -4,7 +4,9 @@ import 'package:flutter_triple/flutter_triple.dart';
 import '../../../shared/local_storage.dart';
 
 class ThemeController extends Store<ThemeMode> {
-  ThemeController(this.shared) : super(ThemeMode.light);
+  ThemeController({
+    required this.shared,
+  }) : super(ThemeMode.light);
 
   final SharedPreferenceService shared;
 

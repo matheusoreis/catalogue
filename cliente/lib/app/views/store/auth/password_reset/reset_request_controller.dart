@@ -7,9 +7,9 @@ import '../../../../controller/state/auth/password_reset/reset_request_state.dar
 import '../../../../shared/result.dart';
 
 class PasswordRequestResetController extends Store<PasswordResetRequestState> {
-  PasswordRequestResetController(
-    this.passwordResetRequestService,
-  ) : super(SuccessPasswordResetRequestState(message: ''));
+  PasswordRequestResetController({
+    required this.passwordResetRequestService,
+  }) : super(SuccessPasswordResetRequestState(message: ''));
 
   final PasswordResetRequestService passwordResetRequestService;
 

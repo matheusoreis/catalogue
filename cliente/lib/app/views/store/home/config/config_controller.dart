@@ -7,10 +7,9 @@ import '../../../../shared/local_storage.dart';
 import '../../theme/theme_controller.dart';
 
 class ConfigController extends Store<ProfileState> {
-  ConfigController(this.sharedPreferenceService)
-      : super(SuccessProfileState(
-          userLoginData: SignInModel.empty(),
-        ));
+  ConfigController({
+    required this.sharedPreferenceService,
+  }) : super(SuccessProfileState(userLoginData: SignInModel.empty()));
 
   final SharedPreferenceService sharedPreferenceService;
   ThemeController themeController = getIt<ThemeController>();

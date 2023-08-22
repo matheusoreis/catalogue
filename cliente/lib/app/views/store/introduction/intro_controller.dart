@@ -10,11 +10,11 @@ import '../../../shared/local_storage.dart';
 import '../../../shared/result.dart';
 
 class IntroController extends Store<IntroState> {
-  IntroController(
-    this.introService,
-    this.sharedPreferenceService,
-    this.themeController,
-  ) : super(SuccessIntroState(intro: IntroModelData.empty()));
+  IntroController({
+    required this.introService,
+    required this.sharedPreferenceService,
+    required this.themeController,
+  }) : super(SuccessIntroState(intro: IntroModelData.empty()));
 
   final IntroService introService;
   final SharedPreferenceService sharedPreferenceService;

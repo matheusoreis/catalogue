@@ -9,11 +9,11 @@ import '../theme/theme_controller.dart';
 import 'conditioner/conditioner_controller.dart';
 
 class HomeController extends Store<HomeState> {
-  HomeController(
-    this.sharedPreferenceService,
-    this.conditionerController,
-    this.themeController,
-  ) : super(SuccessHomeState(userLoginData: SignInModel.empty()));
+  HomeController({
+    required this.sharedPreferenceService,
+    required this.conditionerController,
+    required this.themeController,
+  }) : super(SuccessHomeState(userLoginData: SignInModel.empty()));
 
   final SharedPreferenceService sharedPreferenceService;
   final ConditionerController conditionerController;

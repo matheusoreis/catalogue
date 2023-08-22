@@ -9,9 +9,9 @@ import '../../../components/alert_dialog.dart';
 import '../../../components/buttons/button.dart';
 
 class PasswordConfirmRequestController extends Store<PasswordConfirmRequestState> {
-  PasswordConfirmRequestController(
-    this.passwordConfirmRequestService,
-  ) : super(SuccessPasswordConfirmRequestState(message: null));
+  PasswordConfirmRequestController({
+    required this.passwordConfirmRequestService,
+  }) : super(SuccessPasswordConfirmRequestState(message: null));
 
   final PasswordConfirmRequestService passwordConfirmRequestService;
 

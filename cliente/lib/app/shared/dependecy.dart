@@ -53,137 +53,210 @@ void setupProviders() {
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Intro
   getIt.registerLazySingleton<IntroController>(
-    () => IntroController(getIt(), getIt(), getIt()),
+    () => IntroController(
+      introService: getIt(),
+      sharedPreferenceService: getIt(),
+      themeController: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<IntroService>(
-    () => IntroService(introductionRepository: getIt()),
+    () => IntroService(
+      introductionRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<IntroductionRepository>(
-    () => IntroductionRepository(myHttpClient: getIt()),
+    () => IntroductionRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Entry
   getIt.registerLazySingleton<EntryController>(
-    () => EntryController(getIt(), getIt(), getIt()),
+    () => EntryController(
+      entryService: getIt(),
+      sharedPreferenceService: getIt(),
+      themeController: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<EntryService>(
-    () => EntryService(entryRepository: getIt()),
+    () => EntryService(
+      entryRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<EntryRepository>(
-    () => EntryRepository(myHttpClient: getIt()),
+    () => EntryRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório do SignIn
   getIt.registerLazySingleton<SignInController>(
-    () => SignInController(getIt(), getIt()),
+    () => SignInController(
+      signInService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<SignInService>(
-    () => SignInService(signInRepository: getIt()),
+    () => SignInService(
+      signInRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<SignInRepository>(
-    () => SignInRepository(myHttpClient: getIt()),
+    () => SignInRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório do SignUp
   getIt.registerFactory<SignUpController>(
-    () => SignUpController(getIt()),
+    () => SignUpController(
+      signUpService: getIt(),
+    ),
   );
 
   getIt.registerFactory<SignUpService>(
-    () => SignUpService(signUpService: getIt()),
+    () => SignUpService(
+      signUpService: getIt(),
+    ),
   );
 
   getIt.registerFactory<SignUpRepository>(
-    () => SignUpRepository(myHttpClient: getIt()),
+    () => SignUpRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Home
   getIt.registerLazySingleton<HomeController>(
-    () => HomeController(getIt(), getIt(), getIt()),
+    () => HomeController(
+      sharedPreferenceService: getIt(),
+      conditionerController: getIt(),
+      themeController: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Requisição de Troca de Senha
   getIt.registerLazySingleton<PasswordRequestResetController>(
-    () => PasswordRequestResetController(getIt()),
+    () => PasswordRequestResetController(
+      passwordResetRequestService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<PasswordResetRequestService>(
-    () => PasswordResetRequestService(passwordResetRequestRepository: getIt()),
+    () => PasswordResetRequestService(
+      passwordResetRequestRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<PasswordResetRequestRepository>(
-    () => PasswordResetRequestRepository(myHttpClient: getIt()),
+    () => PasswordResetRequestRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Confirmação de Troca de Senha
   getIt.registerLazySingleton<PasswordConfirmRequestController>(
-    () => PasswordConfirmRequestController(getIt()),
+    () => PasswordConfirmRequestController(
+      passwordConfirmRequestService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<PasswordConfirmRequestService>(
-    () => PasswordConfirmRequestService(passwordConfirmRequestRepository: getIt()),
+    () => PasswordConfirmRequestService(
+      passwordConfirmRequestRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<PasswordConfirmRequestRepository>(
-    () => PasswordConfirmRequestRepository(myHttpClient: getIt()),
+    () => PasswordConfirmRequestRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Requisição dos Estados
   getIt.registerLazySingleton<StateController>(
-    () => StateController(stateService: getIt(), sharedPreferenceService: getIt()),
+    () => StateController(
+      stateService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<StateService>(
-    () => StateService(stateRepository: getIt()),
+    () => StateService(
+      stateRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<StateRepository>(
-    () => StateRepository(myHttpClient: getIt()),
+    () => StateRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório da Criação do Orçamento
   getIt.registerLazySingleton<CreateBudgetController>(
-    () => CreateBudgetController(getIt(), getIt()),
+    () => CreateBudgetController(
+      createBudgetService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<CreateBudgetService>(
-    () => CreateBudgetService(createBudgetRepository: getIt()),
+    () => CreateBudgetService(
+      createBudgetRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<CreateBudgetRepository>(
-    () => CreateBudgetRepository(myHttpClient: getIt()),
+    () => CreateBudgetRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório do Sobre
   getIt.registerLazySingleton<AboutController>(
-    () => AboutController(aboutService: getIt(), sharedPreferenceService: getIt()),
+    () => AboutController(
+      aboutService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<AboutService>(
-    () => AboutService(aboutRepository: getIt()),
+    () => AboutService(
+      aboutRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<AboutRepository>(
-    () => AboutRepository(myHttpClient: getIt()),
+    () => AboutRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Singleton do Controlador, Serviço e o Repositório dos Climatizadores
   getIt.registerLazySingleton<ConditionerController>(
-    () => ConditionerController(conditionerService: getIt(), sharedPreferenceService: getIt()),
+    () => ConditionerController(
+      conditionerService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<ConditionerService>(
-    () => ConditionerService(conditionerRepository: getIt()),
+    () => ConditionerService(
+      conditionerRepository: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<ConditionerRepository>(
-    () => ConditionerRepository(myHttpClient: getIt()),
+    () => ConditionerRepository(
+      myHttpClient: getIt(),
+    ),
   );
 
   // Registra o Factory do Controlador da Visibilidade da Senha
@@ -193,14 +266,21 @@ void setupProviders() {
 
   //
   getIt.registerLazySingleton<ThemeController>(
-    () => ThemeController(getIt()),
+    () => ThemeController(
+      shared: getIt(),
+    ),
   );
 
   getIt.registerSingleton<MyDrawerController>(
-    MyDrawerController(getIt(), getIt()),
+    MyDrawerController(
+      homeController: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
   );
 
   getIt.registerLazySingleton<ConfigController>(
-    () => ConfigController(getIt()),
+    () => ConfigController(
+      sharedPreferenceService: getIt(),
+    ),
   );
 }

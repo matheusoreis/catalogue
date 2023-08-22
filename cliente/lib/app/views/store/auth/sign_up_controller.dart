@@ -10,9 +10,9 @@ import '../../components/alert_dialog.dart';
 import '../../components/buttons/button.dart';
 
 class SignUpController extends Store<SignUpState> {
-  SignUpController(
-    this.signUpService,
-  ) : super(SuccessSignUp(signUp: SignUpData.empty()));
+  SignUpController({
+    required this.signUpService,
+  }) : super(SuccessSignUp(signUp: SignUpData.empty()));
 
   final SignUpService signUpService;
 

@@ -16,10 +16,10 @@ import '../../../components/texts.dart';
 // Definição da classe CreateBudgetController que estende Store<SignUpState>
 class CreateBudgetController extends Store<CreateBudgetState> {
   // Construtor da classe recebe o serviço de cadastro e define o estado inicial para SuccessSignUp
-  CreateBudgetController(
-    this.createBudgetService,
-    this.sharedPreferenceService,
-  ) : super(SuccessCreateBudgetState(budget: null));
+  CreateBudgetController({
+    required this.createBudgetService,
+    required this.sharedPreferenceService,
+  }) : super(SuccessCreateBudgetState(budget: null));
 
   // Campo para o serviço de cadastro
   final CreateBudgetService createBudgetService;
