@@ -18,7 +18,6 @@ class AppWidget extends StatefulWidget {
 
 class _AppWidgetState extends State<AppWidget> {
   ThemeController themeController = getIt<ThemeController>();
-
   late GoRouter routes;
 
   @override

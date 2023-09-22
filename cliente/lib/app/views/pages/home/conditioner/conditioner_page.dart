@@ -36,6 +36,7 @@ class _ConditionerPageState extends State<ConditionerPage> {
             padding: const EdgeInsets.only(top: 20.0),
             child: HeadlineMedium(
               text: title,
+              color: Colors.white,
             ),
           ),
           backgroundColor: primary500,
@@ -44,7 +45,10 @@ class _ConditionerPageState extends State<ConditionerPage> {
               return Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new_rounded),
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     GoRouter.of(context).pop();
                   },
@@ -85,7 +89,7 @@ class _ConditionerPageState extends State<ConditionerPage> {
                             padding: const EdgeInsets.symmetric(vertical: 20.0),
                             child: CachedNetworkImage(
                               imageUrl:
-                                  '$apiURL/api/files/${conditionerModelItems.collectionId}/${conditionerModelItems.id}/${conditionerModelItems.image}',
+                                  '$apiURL/api/files/${conditionerModelItems.collectionId}/${conditionerModelItems.id}/${conditionerModelItems.background}',
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),

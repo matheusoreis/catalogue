@@ -1,46 +1,46 @@
-import 'package:http/http.dart' as http;
+import 'package:catalogue/app/shared/api_url.dart';
+import 'package:dio/dio.dart';
 
 abstract interface class IHttpClient {
-  Future? get({
+  Future<Response> get({
     required String url,
     Map<String, String>? headers,
-  }) {
-    return null;
-  }
+    Map<String, String>? query,
+  });
 
-  Future? post({
+  Future<Response> post({
     required String url,
     required dynamic body,
     required Map<String, String> headers,
-  }) {
-    return null;
-  }
+  });
 }
 
 class MyHttpClient implements IHttpClient {
-  final client = http.Client();
+  final client = Dio(
+    BaseOptions(
+      baseUrl: apiURL,
+    ),
+  );
 
   @override
-  Future get({
-    required String url,
-    Map<String, String>? headers,
-  }) async {
+  Future<Response> get({required String url, Map<String, String>? headers, Map<String, String>? query}) async {
     return await client.get(
-      Uri.parse(url),
-      headers: headers,
+      url,
+      queryParameters: query,
+      options: Options(
+        headers: headers,
+      ),
     );
   }
 
   @override
-  Future? post({
-    required String url,
-    required dynamic body,
-    Map<String, String>? headers,
-  }) async {
+  Future<Response> post({required String url, required dynamic body, Map<String, String>? headers}) async {
     return await client.post(
-      Uri.parse(url),
-      body: body,
-      headers: headers,
+      url,
+      data: body,
+      options: Options(
+        headers: headers,
+      ),
     );
   }
 }

@@ -1,11 +1,7 @@
 import 'dart:convert';
 
 import '../../../../models/error_model.dart';
-
-import '../../../../shared/api_url.dart';
-
 import '../../../../shared/result.dart';
-
 import '../../../client/http_client.dart';
 
 class PasswordResetRequestRepository {
@@ -16,7 +12,7 @@ class PasswordResetRequestRepository {
   Future<Result<ErrorResponse, String>> passwordResetRequest({
     required String email,
   }) async {
-    const String url = '$apiURL/api/collections/users/request-password-reset';
+    const String url = '/api/collections/users/request-password-reset';
 
     final response = await myHttpClient.post(
       url: url,
@@ -33,7 +29,7 @@ class PasswordResetRequestRepository {
     if (response.statusCode == 204) {
       return (null, 'O código para redefinir sua senha foi enviado para o seu e-mail!');
     } else {
-      final Map<String, dynamic> body = jsonDecode(response.body);
+      final Map<String, dynamic> body = response.data;
 
       final passwordRequestResetResponse = ErrorResponse.fromJson(body);
 

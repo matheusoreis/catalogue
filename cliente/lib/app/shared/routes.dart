@@ -1,5 +1,7 @@
+import 'package:catalogue/app/models/home/blog/blog_model.dart';
 import 'package:catalogue/app/models/home/conditioner/conditioners_model.dart';
 import 'package:catalogue/app/views/pages/home/about/about_page.dart';
+import 'package:catalogue/app/views/pages/home/blog/blog_page.dart';
 import 'package:catalogue/app/views/pages/home/conditioner/conditioner_page.dart';
 import 'package:catalogue/app/views/pages/home/product/product_page.dart';
 import 'package:go_router/go_router.dart';
@@ -60,6 +62,14 @@ List<GoRoute> appRoutes = [
     builder: (context, state) {
       return ConditionerPage(
         conditionerModelItems: state.extra as ConditionerModelItems,
+      );
+    },
+  ),
+  GoRoute(
+    path: '/blog',
+    builder: (context, state) {
+      return BlogPage(
+        blogModelItems: state.extra as BlogModelItems,
       );
     },
   ),

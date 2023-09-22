@@ -69,7 +69,7 @@ class ConditionerModelItems {
   final List exit;
   final String frequency;
   final String id;
-  final String image;
+  final String background;
   final String material;
   final String model;
   final String name;
@@ -92,7 +92,7 @@ class ConditionerModelItems {
     required this.exit,
     required this.frequency,
     required this.id,
-    required this.image,
+    required this.background,
     required this.material,
     required this.model,
     required this.name,
@@ -117,7 +117,7 @@ class ConditionerModelItems {
       exit: json['exit'],
       frequency: json['frequency'],
       id: json['id'],
-      image: json['image'],
+      background: json['background'],
       material: json['material'],
       model: json['model'],
       name: json['name'],
@@ -143,7 +143,7 @@ class ConditionerModelItems {
       'exit': exit,
       'frequency': frequency,
       'id': id,
-      'image': image,
+      'background': background,
       'material': material,
       'model': model,
       'name': name,

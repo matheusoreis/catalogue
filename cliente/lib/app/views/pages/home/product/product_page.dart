@@ -1,10 +1,11 @@
-import 'package:catalogue/app/controller/state/home/conditioner/conditioner_state.dart';
-import 'package:catalogue/app/views/store/home/conditioner/conditioner_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_triple/flutter_triple.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../shared/dependecy.dart';
+import '../../../components/home/conditioner_list.dart';
 import '../../../components/texts.dart';
+import '../../../store/home/conditioner/conditioner_controller.dart';
+import '../../../store/theme/theme_controller.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -14,6 +15,20 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  ConditionerController conditionerController = getIt<ConditionerController>();
+  ThemeController themeController = getIt<ThemeController>();
+
+  List<String> headersConditioner = ['disabled=false'];
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      conditionerController.getConditioner(context: context, headers: headersConditioner);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
@@ -49,10 +64,28 @@ class _ProductPageState extends State<ProductPage> {
       body: SizedBox(
         width: maxWidth,
         height: maxHeight,
-        child: ScopedBuilder<ConditionerController, ConditionerState>(
-          onState: (context, state) {
-            return Container();
+        child: RefreshIndicator(
+          onRefresh: () {
+            return Future.delayed(
+              const Duration(seconds: 1),
+              () {
+                conditionerController.getConditioner(context: context, headers: headersConditioner);
+              },
+            );
           },
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 20.0,
+              right: 20.0,
+            ),
+            child: ConditionerList(
+              conditionerController: conditionerController,
+              maxWidth: maxWidth,
+              maxHeight: 500,
+              scrollDirection: Axis.vertical,
+              separatorHeight: 10.0,
+            ),
+          ),
         ),
       ),
     );

@@ -1,8 +1,11 @@
 import 'package:catalogue/app/controller/repositories/home/about/about_repository.dart';
+import 'package:catalogue/app/controller/repositories/home/blog/blog_repository.dart';
 import 'package:catalogue/app/controller/repositories/home/conditioner/conditioners_repository.dart';
 import 'package:catalogue/app/controller/services/home/about/about_service.dart';
+import 'package:catalogue/app/controller/services/home/blog/blog_service.dart';
 import 'package:catalogue/app/controller/services/home/conditioner/conditioner_service.dart';
 import 'package:catalogue/app/views/store/home/about/about_controller.dart';
+import 'package:catalogue/app/views/store/home/blog/blog_controller.dart';
 import 'package:catalogue/app/views/store/home/conditioner/conditioner_controller.dart';
 import 'package:get_it/get_it.dart';
 
@@ -136,8 +139,6 @@ void setupProviders() {
   getIt.registerLazySingleton<HomeController>(
     () => HomeController(
       sharedPreferenceService: getIt(),
-      conditionerController: getIt(),
-      themeController: getIt(),
     ),
   );
 
@@ -239,21 +240,41 @@ void setupProviders() {
     ),
   );
 
+  // Registra o Singleton do Controlador, Serviço e o Repositório do Blog
+  getIt.registerFactory<BlogController>(
+    () => BlogController(
+      blogService: getIt(),
+      sharedPreferenceService: getIt(),
+    ),
+  );
+
+  getIt.registerFactory<BlogService>(
+    () => BlogService(
+      blogRepository: getIt(),
+    ),
+  );
+
+  getIt.registerFactory<BlogRepository>(
+    () => BlogRepository(
+      myHttpClient: getIt(),
+    ),
+  );
+
   // Registra o Singleton do Controlador, Serviço e o Repositório dos Climatizadores
-  getIt.registerLazySingleton<ConditionerController>(
+  getIt.registerFactory<ConditionerController>(
     () => ConditionerController(
       conditionerService: getIt(),
       sharedPreferenceService: getIt(),
     ),
   );
 
-  getIt.registerLazySingleton<ConditionerService>(
+  getIt.registerFactory<ConditionerService>(
     () => ConditionerService(
       conditionerRepository: getIt(),
     ),
   );
 
-  getIt.registerLazySingleton<ConditionerRepository>(
+  getIt.registerFactory<ConditionerRepository>(
     () => ConditionerRepository(
       myHttpClient: getIt(),
     ),

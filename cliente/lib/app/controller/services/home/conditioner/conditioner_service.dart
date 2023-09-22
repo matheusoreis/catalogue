@@ -10,13 +10,13 @@ class ConditionerService {
     required this.conditionerRepository,
   });
 
-  Future<Result<ErrorResponse, ConditionerModelData>> getConditioner(
-    String? headers, {
+  Future<Result<ErrorResponse, ConditionerModelData>> getConditioner({
+    required List<String> headers,
     required String authorization,
   }) async {
     try {
       final conditioner = await conditionerRepository.getConditioner(
-        headers,
+        headers: headers,
         authorization: authorization,
       );
 
