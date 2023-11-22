@@ -46,7 +46,9 @@ final getIt = GetIt.instance;
 void setupProviders() {
   // Registra a Factory do HTTP Client
   getIt.registerFactory<MyHttpClient>(
-    () => MyHttpClient(),
+    () {
+      return MyHttpClient();
+    },
   );
 
   // Registra o Singleton do Shared Preference

@@ -38,6 +38,17 @@ class BlogList extends StatefulWidget {
 class _BlogListState extends State<BlogList> {
   ThemeController themeController = getIt<ThemeController>();
 
+  // List<int> teste = [1, 2, 3, 4, 5, 6];
+
+  // Map<String, dynamic> testes = {
+  //   'nome': 'matheus',
+  //   'idade': 23,
+  //   'profissão': 'Programador Mobile',
+  //   'scivil': 'Solteiro',
+  // };
+
+  // List<BlogModelItems> ola = [];
+
   @override
   Widget build(BuildContext context) {
     return ScopedBuilder<BlogController, BlogState>(
@@ -145,17 +156,13 @@ class _BlogListState extends State<BlogList> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           HeadlineSmall(
-                            text: blogIndex.title.length <= 40
-                                ? blogIndex.title
-                                : "${blogIndex.title.substring(0, 40)}...",
+                            text: blogIndex.title.length <= 40 ? blogIndex.title : "${blogIndex.title.substring(0, 40)}...",
                             color: Colors.white,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 5.0),
                             child: BodyLarge(
-                              text: blogIndex.description.length <= 50
-                                  ? blogIndex.description
-                                  : '${blogIndex.description.substring(0, 50)}...',
+                              text: blogIndex.description.length <= 50 ? blogIndex.description : '${blogIndex.description.substring(0, 50)}...',
                               color: Colors.white,
                             ),
                           )

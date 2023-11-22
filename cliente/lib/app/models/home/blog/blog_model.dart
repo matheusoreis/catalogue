@@ -1,3 +1,44 @@
+class PostModel {
+  int userId;
+  int id;
+  String title;
+  String body;
+
+  PostModel({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.body,
+  });
+
+  factory PostModel.fromJson(Map<String, dynamic> json) {
+    return PostModel(
+      userId: json["userId"],
+      id: json["id"],
+      title: json["title"],
+      body: json["body"],
+    );
+  }
+
+  factory PostModel.clear() {
+    return PostModel(
+      userId: 0,
+      id: 0,
+      title: '',
+      body: '',
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'userId': userId,
+      'id': id,
+      'title': title,
+      'body': body,
+    };
+  }
+}
+
 class BlogModelData {
   int page;
   int perPage;
